@@ -62,7 +62,7 @@ export function useTripPlanner() {
     setLastPrompt(trimmed);
 
     try {
-      const res = await fetch(`${API_BASE}/api/plan-trip`, {
+      const res = await fetch("https://trip-planner-backend-spoo.onrender.com/api/plan-trip", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({ prompt: trimmed }),
