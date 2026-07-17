@@ -62,12 +62,12 @@ export function useTripPlanner() {
     setLastPrompt(trimmed);
 
     try {
-      const res = await fetch("/api/plan-trip", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt: trimmed }),
-        signal: controller.signal,
-      });
+      const res = await fetch(`${API_BASE}/api/plan-trip`, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ prompt: trimmed }),
+  signal: controller.signal,
+});
 
       const data = await res.json().catch(() => null);
 
